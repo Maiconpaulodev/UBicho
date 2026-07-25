@@ -11,41 +11,31 @@ async function carregarAnimais() {
     const container = document.getElementById("animais");
 
     animais.forEach((animal) => {
-      const info = animal.attributes;
-
       container.innerHTML += `
-
 
       <div class="card">
 
-
         <h3>
-          🐾 ${info.nome}
+          🐱 ${animal.nome}
         </h3>
 
-
         <p>
-          Espécie: ${info.especie}
+          Espécie: ${animal.especie}
         </p>
 
-
         <p>
-          Cidade: ${info.cidade}
+          Cidade: ${animal.cidade}
         </p>
 
-
         <p>
-          ${info.descricao}
+          ${animal.descricao}
         </p>
-
 
         <button>
           Tenho interesse
         </button>
 
-
       </div>
-
 
       `;
     });
