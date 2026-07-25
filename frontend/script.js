@@ -1,3 +1,6 @@
+
+console.log("SCRIPT CARREGOU!");
+
 const API = "http://localhost:1337/api/animals?populate=*";
 
 async function carregarAnimais() {
