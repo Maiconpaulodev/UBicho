@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+body {
+
+  background: #f8fafc;
+  color: #1e293b;
+
+}
+
+
+/* HEADER */
+
+header {
+
+  background: #0f172a;
+
+  padding: 20px 8%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+.logo {
+
+  color: white;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+}
+
+
+.logo span {
+
+  color: #22c55e;
+
+}
+
+
+
+nav {
+
+  display: flex;
+
+  gap: 25px;
+
+}
+
+
+
+nav a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: .3s;
+
+}
+
+
+
+nav a:hover {
+
+  color: #22c55e;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero {
+
+  min-height: 520px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+
+
+  background:
+
+    linear-gradient(rgba(15, 23, 42, .85),
+      rgba(15, 23, 42, .85)),
+
+    url("https://images.unsplash.com/photo-1450778869180-41d0601e046e");
+
+  background-size: cover;
+
+  background-position: center;
+
+  color: white;
+
+}
+
+
+
+.hero h1 {
+
+  font-size: 55px;
+
+  max-width: 800px;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.hero p {
+
+  font-size: 20px;
+
+  max-width: 600px;
+
+  line-height: 1.6;
+
+}
+
+
+
+.hero input {
+
+  margin-top: 35px;
+
+  width: 90%;
+
+  max-width: 650px;
+
+  padding: 18px 25px;
+
+  border-radius: 50px;
+
+  border: none;
+
+  font-size: 16px;
+
+  outline: none;
+
+}
+
+
+
+
+
+/* SEÇÕES */
+
+
+section {
+
+  padding: 60px 8%;
+
+}
+
+
+
+section h2 {
+
+  text-align: center;
+
+  font-size: 32px;
+
+  margin-bottom: 40px;
+
+  color: #0f172a;
+
+}
+
+
+
+
+/* CARDS */
+
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns:
+
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 25px;
+
+}
+
+
+
+.card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow:
+
+    0 10px 30px rgba(0, 0, 0, .08);
+
+  transition: .3s;
+
+}
+
+
+
+.card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+
+    0 15px 35px rgba(0, 0, 0, .15);
+
+}
+
+
+
+.card h3 {
+
+  margin-bottom: 15px;
+
+  color: #0f172a;
+
+}
+
+
+
+.card p {
+
+  color: #64748b;
+
+  line-height: 1.5;
+
+}
+
+
+
+
+
+/* BOTÕES */
+
+
+.btn {
+
+  margin-top: 20px;
+
+  background: #22c55e;
+
+  color: white;
+
+  border: none;
+
+  padding: 14px 25px;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+
+
+.btn:hover {
+
+  background: #16a34a;
+
+  transform: scale(1.05);
+
+}
+
+
+
+
+
+/* CATEGORIAS */
+
+
+.categorias {
+
+  background: #f1f5f9;
+
+}
+
+
+
+
+
+/* PARCEIROS */
+
+
+.parceiros {
+
+  background: #0f172a;
+
+  color: white;
+
+  text-align: center;
+
+}
+
+
+
+.parceiros h2 {
+
+  color: white;
+
+}
+
+
+
+.parceiros p {
+
+  margin-bottom: 20px;
+
+  font-size: 18px;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer {
+
+  background: #020617;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 30px;
+
+}
+
+
+
+
+
+/* RESPONSIVO */
+
+
+@media(max-width:768px) {
+
+
+  header {
+
+    flex-direction: column;
+
+    gap: 20px;
+
+  }
+
+
+  nav {
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  }
+
+
+  .hero h1 {
+
+    font-size: 38px;
+
+  }
+
+
+
+  .hero p {
+
+    font-size: 17px;
+
+  }
+
+
+  section {
+
+    padding: 40px 5%;
+
+  }
+
+
+}
