@@ -1,4 +1,4 @@
-const API = "https://SEU-STRAPI.com/api/animais";
+const API = "http://localhost:1337/api/animals?populate=*";
 
 async function carregarAnimais() {
   try {
