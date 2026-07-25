@@ -12,35 +12,33 @@ async function carregarAnimais() {
 
     const container = document.getElementById("animais");
 
-    animais.forEach((animal) => {
-      container.innerHTML += `
+    
+animais.forEach((animal) => {
+  const imagem = `http://localhost:1337${animal.foto.url}`;
 
-      <div class="card">
+  container.innerHTML += `
+    <div class="card">
 
-        <h3>
-          🐾 ${animal.nome}
-        </h3>
+      <img src="${imagem}" alt="${animal.nome}">
 
-        <p>
-          Espécie: ${animal.especie}
-        </p>
+      <h3>${animal.nome}</h3>
 
-        <p>
-          Cidade: ${animal.cidade}
-        </p>
+      <p><strong>Espécie:</strong> ${animal.especie}</p>
 
-        <p>
-          ${animal.descricao}
-        </p>
+      <p><strong>Raça:</strong> ${animal.raca}</p>
 
-        <button>
-          Tenho interesse
-        </button>
+      <p><strong>Idade:</strong> ${animal.idade}</p>
 
-      </div>
+      <p><strong>Cidade:</strong> ${animal.cidade}</p>
 
-      `;
-    });
+      <p>${animal.descricao}</p>
+
+      <button>Tenho interesse</button>
+
+    </div>
+  `;
+});
+
   } catch (erro) {
     console.log("Erro ao carregar animais:", erro);
   }
