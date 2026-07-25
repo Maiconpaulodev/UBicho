@@ -1,46 +1,37 @@
 const API = "http://localhost:1337/api/animals?populate=*";
 
 async function carregarAnimais() {
+  const container = document.getElementById("animais");
+
   try {
     const resposta = await fetch(API);
-
     const dados = await resposta.json();
 
     console.log(dados);
 
-    const animais = dados.data;
+    container.innerHTML = "";
 
-    const container = document.getElementById("animais");
+    dados.data.forEach((animal) => {
+      const imagem = `http://localhost:1337${animal.foto.url}`;
 
-    
-animais.forEach((animal) => {
-  const imagem = `http://localhost:1337${animal.foto.url}`;
+      container.innerHTML += `
+        <div class="card">
+          <img src="${imagem}" alt="${animal.nome}" width="250">
 
-  container.innerHTML += `
-    <div class="card">
+          <h3>${animal.nome}</h3>
 
-      <img src="${imagem}" alt="${animal.nome}">
+          <p><strong>Espécie:</strong> ${animal.especie}</p>
 
-      <h3>${animal.nome}</h3>
+          <p><strong>Cidade:</strong> ${animal.cidade}</p>
 
-      <p><strong>Espécie:</strong> ${animal.especie}</p>
+          <p>${animal.descricao}</p>
 
-      <p><strong>Raça:</strong> ${animal.raca}</p>
-
-      <p><strong>Idade:</strong> ${animal.idade}</p>
-
-      <p><strong>Cidade:</strong> ${animal.cidade}</p>
-
-      <p>${animal.descricao}</p>
-
-      <button>Tenho interesse</button>
-
-    </div>
-  `;
-});
-
+          <button>Tenho interesse</button>
+        </div>
+      `;
+    });
   } catch (erro) {
-    console.log("Erro ao carregar animais:", erro);
+    console.error(erro);
   }
 }
 
