@@ -6,6 +6,8 @@ async function carregarAnimais() {
 
     const dados = await resposta.json();
 
+    console.log(dados);
+
     const animais = dados.data;
 
     const container = document.getElementById("animais");
@@ -16,7 +18,7 @@ async function carregarAnimais() {
       <div class="card">
 
         <h3>
-          🐱 ${animal.nome}
+          🐾 ${animal.nome}
         </h3>
 
         <p>
@@ -39,8 +41,8 @@ async function carregarAnimais() {
 
       `;
     });
-  } catch (error) {
-    console.log("Erro ao carregar animais", error);
+  } catch (erro) {
+    console.log("Erro ao carregar animais:", erro);
   }
 }
 
