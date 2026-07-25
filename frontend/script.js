@@ -1,7 +1,7 @@
 
-console.log("SCRIPT CARREGOU!");
 
-const API = "http://localhost:1337/api/animals?populate=*";
+
+const API = "https://ubicho.onrender.com/api/animals?populate=*";
 
 async function carregarAnimais() {
   const container = document.getElementById("animais");
@@ -15,7 +15,7 @@ async function carregarAnimais() {
     container.innerHTML = "";
 
     dados.data.forEach((animal) => {
-      const imagem = `http://localhost:1337${animal.foto.url}`;
+    const imagem = `https://ubicho.onrender.com${animal.foto.url}`;
 
       container.innerHTML += `
         <div class="card">
