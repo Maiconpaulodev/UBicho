@@ -18,21 +18,49 @@ async function carregarAnimais() {
         : "imagem-padrao.jpg";
 
       container.innerHTML += `
+
         <div class="card">
 
-          <img src="${imagem}" alt="${animal.nome}" width="250">
+          <img 
+            src="${imagem}" 
+            alt="${animal.nome}"
+            width="250"
+          >
+
 
           <h3>${animal.nome}</h3>
 
-          <p><strong>Espécie:</strong> ${animal.especie}</p>
 
-          <p><strong>Cidade:</strong> ${animal.cidade}</p>
+          <p>
+            <strong>Espécie:</strong>
+            ${animal.especie}
+          </p>
 
-          <p>${animal.descricao}</p>
 
-          <button>Tenho interesse</button>
+          <p>
+            <strong>Raça:</strong>
+            ${animal.raca}
+          </p>
+
+
+          <p>
+            <strong>Cidade:</strong>
+            ${animal.cidade}
+          </p>
+
+
+          <p>
+            ${animal.descricao}
+          </p>
+
+
+          <button>
+            Tenho interesse
+          </button>
+
 
         </div>
+
       `;
     });
   } catch (erro) {
