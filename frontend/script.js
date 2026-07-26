@@ -3,33 +3,76 @@ const API = "https://ubicho.onrender.com/api/animals?populate=*";
 async function carregarAnimais() {
   const container = document.getElementById("animais");
 
-  const resposta = await fetch(API);
+  try {
+    const resposta = await fetch(API);
 
-  const dados = await resposta.json();
+    const dados = await resposta.json();
 
-  console.log(dados.data);
+    container.innerHTML = "";
 
-  dados.data.forEach((animal) => {
-    const imagem = animal.foto
-      ? `https://ubicho.onrender.com${animal.foto.url}`
-      : "imagem-padrao.jpg";
+    dados.data.forEach((animal) => {
+      let imagem;
 
-    console.log(imagem);
+      if (animal.foto) {
+        imagem = `https://ubicho.onrender.com${animal.foto.url}`;
+      } else {
+        imagem = "https://via.placeholder.com/250x180?text=Sem+Foto";
+      }
 
-    container.innerHTML += `
+      container.innerHTML += `
 
       <div class="card">
 
-        <img src="${imagem}" width="250">
 
-        <h3>${animal.nome}</h3>
+        <img 
+        src="${imagem}" 
+        alt="${animal.nome}"
+        width="250"
+        height="180"
+        style="object-fit:cover;border-radius:15px;"
+        >
 
-        <p>${animal.especie}</p>
+
+        <h3>
+        ${animal.nome}
+        </h3>
+
+
+        <p>
+        <strong>Espécie:</strong>
+        ${animal.especie}
+        </p>
+
+
+        <p>
+        <strong>Raça:</strong>
+        ${animal.raca ?? "Não informado"}
+        </p>
+
+
+        <p>
+        <strong>Cidade:</strong>
+        ${animal.cidade ?? "Não informado"}
+        </p>
+
+
+        <p>
+        ${animal.descricao ?? "Sem descrição"}
+        </p>
+
+
+        <button class="btn">
+        Tenho interesse
+        </button>
+
 
       </div>
 
-    `;
-  });
+      `;
+    });
+  } catch (erro) {
+    console.log("Erro ao carregar animais:", erro);
+  }
 }
 
 carregarAnimais();
