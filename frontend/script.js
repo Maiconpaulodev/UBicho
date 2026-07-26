@@ -1,62 +1,35 @@
 const API = "https://ubicho.onrender.com/api/animals?populate=*";
 
 async function carregarAnimais() {
-  try {
-    const resposta = await fetch(API);
+  const container = document.getElementById("animais");
 
-    const dados = await resposta.json();
+  const resposta = await fetch(API);
 
-    const animais = dados.data;
+  const dados = await resposta.json();
 
-    const container = document.getElementById("animais");
+  console.log(dados.data);
 
-    container.innerHTML = "";
+  dados.data.forEach((animal) => {
+    const imagem = animal.foto
+      ? `https://ubicho.onrender.com${animal.foto.url}`
+      : "imagem-padrao.jpg";
 
-    animais.forEach((animal) => {
-      const imagem = animal.foto
-        ? `https://ubicho.onrender.com${animal.foto.url}`
-        : "imagem-padrao.jpg";
+    console.log(imagem);
 
-      container.innerHTML += `
+    container.innerHTML += `
 
+      <div class="card">
 
-        <div class="card">
+        <img src="${imagem}" width="250">
 
+        <h3>${animal.nome}</h3>
 
-          <img 
-            src="${imagem}" 
-            width="250"
-          >
+        <p>${animal.especie}</p>
 
+      </div>
 
-          <h3>
-            ${animal.nome}
-          </h3>
-
-
-          <p>
-            ${animal.especie}
-          </p>
-
-
-          <p>
-            ${animal.cidade}
-          </p>
-
-
-          <button>
-            Tenho interesse
-          </button>
-
-
-        </div>
-
-
-      `;
-    });
-  } catch (error) {
-    console.log("Erro ao carregar animais", error);
-  }
+    `;
+  });
 }
 
 carregarAnimais();
