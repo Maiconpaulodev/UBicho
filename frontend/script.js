@@ -5,6 +5,7 @@ async function carregarAnimais() {
 
   try {
     const resposta = await fetch(API);
+
     const dados = await resposta.json();
 
     console.log(dados);
@@ -12,10 +13,13 @@ async function carregarAnimais() {
     container.innerHTML = "";
 
     dados.data.forEach((animal) => {
-      const imagem = `https://ubicho.onrender.com${animal.foto.url}`;
+      const imagem = animal.foto
+        ? `https://ubicho.onrender.com${animal.foto.url}`
+        : "imagem-padrao.jpg";
 
       container.innerHTML += `
         <div class="card">
+
           <img src="${imagem}" alt="${animal.nome}" width="250">
 
           <h3>${animal.nome}</h3>
@@ -27,11 +31,12 @@ async function carregarAnimais() {
           <p>${animal.descricao}</p>
 
           <button>Tenho interesse</button>
+
         </div>
       `;
     });
   } catch (erro) {
-    console.error(erro);
+    console.error("Erro ao carregar animais:", erro);
   }
 }
 
