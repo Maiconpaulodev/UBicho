@@ -1,6 +1,3 @@
-
-
-
 const API = "https://ubicho.onrender.com/api/animals?populate=*";
 
 async function carregarAnimais() {
@@ -15,7 +12,7 @@ async function carregarAnimais() {
     container.innerHTML = "";
 
     dados.data.forEach((animal) => {
-    const imagem = `https://ubicho.onrender.com${animal.foto.url}`;
+      const imagem = `https://ubicho.onrender.com${animal.foto.url}`;
 
       container.innerHTML += `
         <div class="card">
