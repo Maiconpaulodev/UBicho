@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animals",
+  "info": {
+    "singularName": "animal",
+    "pluralName": "animals",
+    "displayName": "Animal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "especie": {
+      "type": "enumeration",
+      "enum": [
+        "Cachorro",
+        "Gato",
+        "Cavalo",
+        "Ave",
+        "Coelho",
+        "Outro"
+      ]
+    },
+    "raca": {
+      "type": "string"
+    },
+    "idade": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "situacao": {
+      "type": "enumeration",
+      "enum": [
+        "Disponível",
+        "Adotado",
+        "Em tratamento"
+      ]
+    }
+  }
+}
