@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  padding:10px;
   box-sizing: border-box;
   font-family: "Segoe UI", Arial, sans-serif;
 }
@@ -270,7 +270,7 @@ section h2 {
 .btn {
   display: inline-block;
   margin-top: 20px;
-  background: #22c55e;
+  background: #16a34a;
   color: white;
   border: none;
   padding: 7px 8px;
